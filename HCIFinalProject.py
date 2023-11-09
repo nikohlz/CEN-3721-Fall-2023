@@ -12,7 +12,7 @@ st.text_input("YOUR NAME: ")
 # Radio Button
 conv_type = st.selectbox("Select your Zodiac Sign: ", options=["Capricorn", "Aquarius", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius"])
 # Selectbox 
-conv_type = st.selectbox("Select your Gender: ", options=["Female", "Male", "Non-Binary"])
+conv_type2 = st.selectbox("Select your Gender: ", options=["Female", "Male", "Non-Binary"])
 # Slider 
 age = st.slider('How old are you?', 0, 130, 25)
 st.write("You're ", age, 'years old')
