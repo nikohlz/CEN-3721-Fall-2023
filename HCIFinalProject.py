@@ -9,18 +9,22 @@ st.title("Brought to you by Group 3")
 # ::::::: 5 different widgets :::::::
 # Text Input 
 st.text_input("YOUR NAME: ")
-# Selectbox 
+# Radio Button
 conv_type = st.selectbox("Select your Zodiac Sign: ", options=["Capricorn", "Aquarius", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius"])
+# Selectbox 
 conv_type = st.selectbox("Select your Gender: ", options=["Female", "Male", "Non-Binary"])
 # Slider 
 age = st.slider('How old are you?', 0, 130, 25)
 st.write("You're ", age, 'years old')
-# Radio Button
 # 
 
+# Text Input 
 st.text_input("PARTNER'S NAME: ")
+# Radio Button
 conv_type = st.selectbox("Select your Zodiac Sign: ", options= ["Capricorn", "Aquarius", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius"])
+# Selectbox 
 conv_type = st.selectbox("Select your Gender: ", options=["Female", "Male", "Non-Binary"])
+# Slider 
 age = st.slider('How old are you?', 0, 130, 25)
 st.write("You're ", age, 'years old')
 
