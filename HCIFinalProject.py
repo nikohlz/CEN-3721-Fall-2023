@@ -6,6 +6,7 @@ st.header("Love Zodiac Compatibility")
 st.title("Brought to you by Group 3")
 # st.sidebar.title("Brought to you by Group 3")
 
+# :::::::5 different widgets :::::::
 # Text Input 
 st.text_input("YOUR NAME: ")
 # Selectbox 
