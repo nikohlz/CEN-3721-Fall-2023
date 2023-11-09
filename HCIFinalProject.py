@@ -19,7 +19,6 @@ st.write("Your partner is", partner_age, "years old")
 
 if st.button("Submit"):
     if user_name and user_zodiac and user_gender and partner_name and partner_zodiac and partner_gender:
-        st.success("You’ve successfully submitted your info, let’s see your matches! 💟")
-        # Perform further actions like calculating zodiac compatibility here
+        st.success("You’ve successfully submitted your info, let’s see your matches! 💟")       
     else:
         st.error("Please fill out all the fields. 🚨")
