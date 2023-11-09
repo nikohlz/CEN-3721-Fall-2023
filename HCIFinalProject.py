@@ -6,8 +6,9 @@ st.header("Love Zodiac Compatibility")
 st.title("Brought to you by Group 3")
 # st.sidebar.title("Brought to you by Group 3")
 
-#st.sidebar.text_input("YOUR NAME: ")
+# Text Input 
 st.text_input("YOUR NAME: ")
+# Selectbox 
 conv_type = st.selectbox("Select your Zodiac Sign: ", options=["Capricorn", "Aquarius", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius"])
 conv_type = st.selectbox("Select your Gender: ", options=["Female", "Male", "Non-Binary"])
 
