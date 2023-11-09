@@ -11,6 +11,11 @@ st.text_input("YOUR NAME: ")
 # Selectbox 
 conv_type = st.selectbox("Select your Zodiac Sign: ", options=["Capricorn", "Aquarius", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius"])
 conv_type = st.selectbox("Select your Gender: ", options=["Female", "Male", "Non-Binary"])
+# Slider 
+values = st.slider('Select age range of values', 0.0, 100.0, (25.0, 75.0))
+st.write('Values:', values)
+# 
+#
 
 st.text_input("PARTNER'S NAME: ")
 conv_type = st.selectbox("Select your Zodiac Sign: ", options= ["Capricorn", "Aquarius", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius"])
