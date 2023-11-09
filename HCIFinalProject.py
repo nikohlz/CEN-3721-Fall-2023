@@ -21,6 +21,10 @@ st.write("You're ", age, 'years old')
 st.text_input("PARTNER'S NAME: ")
 conv_type = st.selectbox("Select your Zodiac Sign: ", options= ["Capricorn", "Aquarius", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius"])
 conv_type = st.selectbox("Select your Gender: ", options=["Female", "Male", "Non-Binary"])
+age = st.slider('How old are you?', 0, 130, 25)
+st.write("You're ", age, 'years old')
+
+
 
 #results = "Chances "
 st.sidebar.text_area("Enter your comments here")
