@@ -17,7 +17,9 @@ partner_gender = st.selectbox("Select your Partner's Gender:", options=["Female"
 partner_age = st.slider("How old is your partner?", 0, 130, 25)
 st.write("Your partner is", partner_age, "years old")
 
-
-
-# results = "Chances "
-# st.sidebar.text_area("Enter your comments here")
+if st.button("Submit"):
+    if user_name and user_zodiac and user_gender and partner_name and partner_zodiac and partner_gender:
+        st.success("You’ve successfully submitted your info, let’s see your matches! 💟")
+        # Perform further actions like calculating zodiac compatibility here
+    else:
+        st.error("Please fill out all the fields. 🚨")
