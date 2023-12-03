@@ -1,7 +1,56 @@
 import streamlit as st
+# import pandas as pd
+# To run:  streamlit run HCIFinalProject.py
 
-st.header("Love Zodiac Compatibility")
-st.title("Brought to you by Group 3")
+st.set_page_config(page_title="Love Zodiac Compatibility",
+                   layout= "wide" )
+
+# Header and title
+st.markdown(
+    """
+    <style>
+    h1 {
+        color: #ffa7d2;
+    }
+
+    body {
+        color: #5d0403;
+    }
+    </style>
+
+    <h1>Love Zodiac Compatibility</h1>
+    <p>Brought to you by Group 3</p>
+    """,
+    unsafe_allow_html=True,
+)
+
+page_color = f"""
+<style>
+ [data-testid="stAppViewContainer"] > .main {{
+ background-color: #fce8ee;
+ color: #5d0403}}
+ 
+ [data-testid="stSidebar"] > div:first-child {{
+ background-color: #fcfafc;}}
+ 
+ [data-testid="stHeader"] {{
+ background: rgba(0,0,0,0);
+ }}
+ h1, h2, h3, h4, h5, h6, p {{
+        color: #5d0403;
+ }}
+ </style>
+"""
+st.markdown(page_color, unsafe_allow_html=True)
+
+
+st.sidebar.title("Any thoughts?")
+st.sidebar.header("We want to hear from you!")
+st.sidebar.selectbox("How do you prefer to be contacted?",options= [
+    "", "Email", "Phone Call", "Text Message", "I prefer not to be contacted."])
+#if st.sidebar.selectbox("Email"):
+#    enter_email = st.text_input("Please enter your email we can contact you at!")
+
 
 # User Input for User
 user_name = st.text_input("YOUR NAME:")
@@ -19,6 +68,6 @@ st.write("Your partner is", partner_age, "years old")
 
 if st.button("Submit"):
     if user_name and user_zodiac and user_gender and partner_name and partner_zodiac and partner_gender:
-        st.success("You’ve successfully submitted your info, let’s see your matches! 💟")       
+        st.success("You’ve successfully submitted your info, let’s see your matches! 💟")
     else:
         st.error("Please fill out all the fields. 🚨")
