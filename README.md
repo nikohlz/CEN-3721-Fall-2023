@@ -1,4 +1,6 @@
 # CEN-3721-Fall-2023
+https://docs.google.com/document/d/1FWjmswB7_7Uax1LL4-yW3WjbHHK8oShPV_23LscXa78/edit?usp=sharing
+
 Final Project for Group 3 of CEN 3721
 
 Zodiac Love Calculator 
