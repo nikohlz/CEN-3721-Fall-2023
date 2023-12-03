@@ -27,11 +27,11 @@ st.markdown(
 page_color = f"""
 <style>
  [data-testid="stAppViewContainer"] > .main {{
- background-color: #fce8ee;
+ background-color: #fcfafc;
  color: #5d0403}}
  
  [data-testid="stSidebar"] > div:first-child {{
- background-color: #fcfafc;}}
+ background-color: #fce8ee;}}
  
  [data-testid="stHeader"] {{
  background: rgba(0,0,0,0);
