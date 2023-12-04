@@ -78,6 +78,24 @@ user_gender = st.selectbox("Select your Gender:", options=["", "Female", "Male",
 user_age = st.slider('How old are you?', 0, 130, 25)
 st.write("You're", user_age, 'years old')
 
+
+# Zodiac sign data with date ranges
+zodiac_data = {
+    'Zodiac Sign': ['Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces'],
+    'Date Range': ['Mar 21 - Apr 19', 'Apr 20 - May 20', 'May 21 - Jun 20', 'Jun 21 - Jul 22', 'Jul 23 - Aug 22', 'Aug 23 - Sep 22', 'Sep 23 - Oct 22', 'Oct 23 - Nov 21', 'Nov 22 - Dec 21', 'Dec 22 - Jan 19', 'Jan 20 - Feb 18', 'Feb 19 - Mar 20']
+}
+
+# Create a DataFrame from the zodiac data
+zodiac_df = pd.DataFrame(zodiac_data)
+
+# Create Streamlit app
+st.title('Zodiac Sign Date Ranges')
+
+# Display the zodiac DataFrame in the sidebar without index numbers
+st.sidebar.title('Zodiac Sign Date Ranges')
+st.sidebar.write(zodiac_df.set_index('Zodiac Sign'), index=False)
+
+
 # User Input for Partner
 partner_name = st.text_input("PARTNER'S NAME:")
 partner_zodiac = st.selectbox("Select your Partner's Zodiac Sign☽:", options=["Capricorn ♑️", "Aquarius ♒️", "Pisces ♓️", "Aries ♈️", "Taurus ♉️", "Gemini ♊️", "Cancer ♋️", "Leo ♌️", "Virgo ♍️", "Libra ♎️️", "Scorpio ♏️", "Sagittarius ♐️"])
