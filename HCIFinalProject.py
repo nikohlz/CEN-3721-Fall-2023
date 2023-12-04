@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 # To run:  streamlit run HCIFinalProject.py
 
 st.set_page_config(page_title="Love Zodiac Compatibility",
-                   layout= "wide" )
+                   layout="wide")
 
 # Header and title
 st.markdown(
@@ -31,10 +31,10 @@ page_color = f"""
  [data-testid="stAppViewContainer"] > .main {{
  background-color: #fcfafc;
  color: #5d0403}}
- 
+
  [data-testid="stSidebar"] > div:first-child {{
  background-color: #fce8ee;}}
- 
+
  [data-testid="stHeader"] {{
  background: rgba(0,0,0,0);
  }}
@@ -44,7 +44,6 @@ page_color = f"""
  </style>
 """
 st.markdown(page_color, unsafe_allow_html=True)
-
 
 st.sidebar.title("Any thoughts?")
 st.sidebar.header("We want to hear from you!")
@@ -87,11 +86,11 @@ st.title('Zodiac Sign Date Ranges')
 st.sidebar.title('Zodiac Sign Date Ranges')
 st.sidebar.write(zodiac_df.set_index('Zodiac Sign'), index=False)
 
-
 # User Input for User
 user_name = st.text_input("YOUR NAME:")
 user_zodiac = st.selectbox("Select your Zodiac Sign ☽:",
-                           options=["Capricorn", "Aquarius", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius"])
+                           options=["Capricorn", "Aquarius", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo",
+                                    "Virgo", "Libra", "Scorpio", "Sagittarius"])
 user_gender = st.selectbox("Select your Gender:", options=["Female", "Male", "Non-Binary"])
 user_color = st.color_picker("Pick your Favorite Color", '#00f900')
 user_age = st.slider('How old are you?', 0, 130, 25)
@@ -100,19 +99,19 @@ st.write("You're", user_age, 'years old')
 # User Input for Partner
 partner_name = st.text_input("PARTNER'S NAME:")
 partner_zodiac = st.selectbox("Select your Partner's Zodiac Sign ☽:",
-                              options=["Capricorn", "Aquarius", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius"])
+                              options=["Capricorn", "Aquarius", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo",
+                                       "Virgo", "Libra", "Scorpio", "Sagittarius"])
 partner_gender = st.selectbox("Select your Partner's Gender:", options=["Female", "Male", "Non-Binary"])
 partner_color = st.color_picker("Pick your Partner's favorite Color", '#00f900')
 partner_age = st.slider("How old is your partner?", 0, 130, 25)
 st.write("Your partner is", partner_age, "years old")
-
-def generate_compatibility_data():
+def generate_popularity_data():
     zodiac_signs = [
-        "Capricorn ♑️", "Aquarius ♒️", "Pisces ♓️", "Aries ♈️", "Taurus ♉️", "Gemini ♊️",
-        "Cancer ♋️", "Leo ♌️", "Virgo ♍️", "Libra ♎️️", "Scorpio ♏️", "Sagittarius ♐️"
+        "Capricorn", "Aquarius", "Pisces", "Aries", "Taurus", "Gemini",
+        "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius"
     ]
-    compatibility_data = np.random.rand(len(zodiac_signs), len(zodiac_signs)) * 50
-    return compatibility_data, zodiac_signs
+    popularity_data = np.random.randint(10, 100, size=(len(zodiac_signs), len(zodiac_signs)))
+    return popularity_data, zodiac_signs
 
 st.sidebar.title('✨Popular Zodiac Combinations✨')
 
@@ -165,12 +164,12 @@ if st.button("Submit"):
         ax.set_xticklabels(chart_data.index, rotation=45)
         ax.legend()
         st.pyplot(fig)
-      
-        st.subheader('✨Potential Couple Matches in Your Area✨')
+
+        st.subheader('✨Matches and Potential Couples Map✨')
         df = pd.DataFrame(
             np.random.randn(1000, 2) / [50, 50] + [25.7617, -80.1918],
             columns=['lat', 'lon'])
 
         st.map(df)
-    else:
-        st.error("Please fill out all the fields. 🚨")
+else:
+    st.error("Please fill out all the fields. 🚨")
