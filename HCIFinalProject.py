@@ -91,27 +91,27 @@ st.sidebar.write(zodiac_df.set_index('Zodiac Sign'), index=False)
 # User Input for User
 user_name = st.text_input("YOUR NAME:")
 user_zodiac = st.selectbox("Select your Zodiac Sign ☽:",
-                           options=["Capricorn", "Aquarius", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo",
-                                    "Virgo", "Libra", "Scorpio", "Sagittarius"])
+                           options=["Capricorn ♑️", "Aquarius ♒️", "Pisces ♓️", "Aries ♈️", "Taurus ♉️", "Gemini ♊️",
+                                    "Cancer ♋️", "Leo ♌️", "Virgo ♍️", "Libra ♎️️", "Scorpio ♏️", "Sagittarius ♐️"])
 user_gender = st.selectbox("Select your Gender:", options=["Female", "Male", "Non-Binary"])
-user_color = st.color_picker("Pick your Favorite Color", '#00f900')
+user_color = st.color_picker("Pick your Favorite Color", '#5d0403')
 user_age = st.slider('How old are you?', 0, 130, 25)
 st.write("You're", user_age, 'years old')
 
 # User Input for Partner
 partner_name = st.text_input("PARTNER'S NAME:")
 partner_zodiac = st.selectbox("Select your Partner's Zodiac Sign ☽:",
-                              options=["Capricorn", "Aquarius", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo",
-                                       "Virgo", "Libra", "Scorpio", "Sagittarius"])
+                              options=["Capricorn ♑️", "Aquarius ♒️", "Pisces ♓️", "Aries ♈️", "Taurus ♉️", "Gemini ♊️",
+                                    "Cancer ♋️", "Leo ♌️", "Virgo ♍️", "Libra ♎️️", "Scorpio ♏️", "Sagittarius ♐️"])
 partner_gender = st.selectbox("Select your Partner's Gender:", options=["Female", "Male", "Non-Binary"])
-partner_color = st.color_picker("Pick your Partner's favorite Color", '#00f900')
+partner_color = st.color_picker("Pick your Partner's favorite Color", '#5d0403')
 partner_age = st.slider("How old is your partner?", 0, 130, 25)
 st.write("Your partner is", partner_age, "years old")
 
 def generate_popularity_data():
     zodiac_signs = [
-        "Capricorn", "Aquarius", "Pisces", "Aries", "Taurus", "Gemini",
-        "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius"
+        "Capricorn ♑️", "Aquarius ♒️", "Pisces ♓️", "Aries ♈️", "Taurus ♉️", "Gemini ♊️",
+        "Cancer ♋️", "Leo ♌️", "Virgo ♍️", "Libra ♎️️", "Scorpio ♏️", "Sagittarius ♐️"
     ]
     popularity_data = np.random.randint(10, 100, size=(len(zodiac_signs), len(zodiac_signs)))
     return popularity_data, zodiac_signs
@@ -135,8 +135,8 @@ st.sidebar.pyplot(fig)
 
 def generate_compatibility_data():
     zodiac_signs = [
-        "Capricorn", "Aquarius", "Pisces", "Aries", "Taurus", "Gemini",
-        "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius"
+        "Capricorn ♑️", "Aquarius ♒️", "Pisces ♓️", "Aries ♈️", "Taurus ♉️", "Gemini ♊️",
+        "Cancer ♋️", "Leo ♌️", "Virgo ♍️", "Libra ♎️️", "Scorpio ♏️", "Sagittarius ♐️"
     ]
     compatibility_data = np.random.rand(len(zodiac_signs), len(zodiac_signs)) * 50
     return compatibility_data, zodiac_signs
