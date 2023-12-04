@@ -73,7 +73,7 @@ if option and agree_terms:
 
 # User Input for User
 user_name = st.text_input("YOUR NAME:")
-user_zodiac = st.selectbox("Select your Zodiac Sign☽:", options=["Capricorn ♑️", "Aquarius ♒️", "Pisces ♓️", "Aries ♈️", "Taurus ♉️", "Gemini ♊️", "Cancer ♋️", "Leo ♌️", "Virgo ♍️", "Libra ♎️️", "Scorpio ♏️", "Sagittarius ♐️"])
+user_zodiac = st.selectbox("Select your Zodiac Sign☽:", options=["","Capricorn ♑️", "Aquarius ♒️", "Pisces ♓️", "Aries ♈️", "Taurus ♉️", "Gemini ♊️", "Cancer ♋️", "Leo ♌️", "Virgo ♍️", "Libra ♎️️", "Scorpio ♏️", "Sagittarius ♐️"])
 user_gender = st.selectbox("Select your Gender:", options=["", "Female", "Male", "Non-Binary"])
 user_age = st.slider('How old are you?', 0, 130, 25)
 st.write("You're", user_age, 'years old')
