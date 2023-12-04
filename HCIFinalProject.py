@@ -50,7 +50,9 @@ st.sidebar.selectbox("How do you prefer to be contacted?",options= [
     "", "Email", "Phone Call", "Text Message", "I prefer not to be contacted."])
 #if st.sidebar.selectbox("Email"):
 #    enter_email = st.text_input("Please enter your email we can contact you at!")
-
+enter_email = st.sidebar.text_input("Please enter your email we can contact you at!")
+if enter_email:
+    st.sidebar.write(f"Thank you! You will receive a message at {enter_email}")
 
 # User Input for User
 user_name = st.text_input("YOUR NAME:")
