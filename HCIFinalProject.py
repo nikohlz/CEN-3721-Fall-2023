@@ -1,5 +1,7 @@
 import streamlit as st
-# import pandas as pd
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
 # To run:  streamlit run HCIFinalProject.py
 
 st.set_page_config(page_title="Love Zodiac Compatibility",
@@ -69,17 +71,42 @@ elif option == "Text Message":
 
 # User Input for User
 user_name = st.text_input("YOUR NAME:")
-user_zodiac = st.selectbox("Select your Zodiac Sign:", options=["Capricorn", "Aquarius", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius"])
+user_zodiac = st.selectbox("Select your Zodiac Sign☽:", options=["Capricorn", "Aquarius", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius"])
 user_gender = st.selectbox("Select your Gender:", options=["Female", "Male", "Non-Binary"])
 user_age = st.slider('How old are you?', 0, 130, 25)
 st.write("You're", user_age, 'years old')
 
 # User Input for Partner
 partner_name = st.text_input("PARTNER'S NAME:")
-partner_zodiac = st.selectbox("Select your Partner's Zodiac Sign:", options=["Capricorn", "Aquarius", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius"])
+partner_zodiac = st.selectbox("Select your Partner's Zodiac Sign☽:", options=["Capricorn", "Aquarius", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius"])
 partner_gender = st.selectbox("Select your Partner's Gender:", options=["Female", "Male", "Non-Binary"])
 partner_age = st.slider("How old is your partner?", 0, 130, 25)
 st.write("Your partner is", partner_age, "years old")
+
+def generate_popularity_data():
+    zodiac_signs = [
+        "Capricorn", "Aquarius", "Pisces", "Aries", "Taurus", "Gemini",
+        "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius"
+    ]
+    popularity_data = np.random.randint(10, 100, size=(len(zodiac_signs), len(zodiac_signs)))
+    return popularity_data, zodiac_signs
+
+st.sidebar.title('✨Popular Zodiac Combinations✨')
+
+popularity_matrix, signs = generate_popularity_data()
+
+popularity_df = pd.DataFrame(popularity_matrix, columns=signs, index=signs)
+
+most_popular_combination = popularity_df.stack().idxmax()
+st.sidebar.write(f"♡Most popular combination this week♡: {most_popular_combination}")
+
+fig, ax = plt.subplots(figsize=(6, 4))
+popularity_df.plot(kind='line', ax=ax, marker='o')
+ax.set_xlabel('Zodiac Signs')
+ax.set_ylabel('Popularity Score')
+ax.set_title('Zodiac Popularity')
+ax.legend(loc='upper right')
+st.sidebar.pyplot(fig)
 
 def generate_compatibility_data():
     zodiac_signs = [
@@ -89,13 +116,12 @@ def generate_compatibility_data():
     compatibility_data = np.random.rand(len(zodiac_signs), len(zodiac_signs)) * 25
     return compatibility_data, zodiac_signs
 
-
 if st.button("Submit"):
     if user_name and user_zodiac and user_gender and partner_name and partner_zodiac and partner_gender:
         st.success("You’ve successfully submitted your info, let’s see your matches! 💟")
         compatibility_matrix, signs = generate_compatibility_data()
 
-        # Filter compatibility scores for selected user and partner signs
+        # Filter compatibility scores for selected user and partner sign
         user_index = signs.index(user_zodiac)
         partner_index = signs.index(partner_zodiac)
         user_compat_scores = compatibility_matrix[user_index]
@@ -107,7 +133,14 @@ if st.button("Submit"):
             "Partner's Compatibility": partner_compat_scores
         }, index=signs)
 
-        # Display the bar chart for the selected compatibility scores
-        st.bar_chart(chart_data)
+        # Plotting the bar chart using Matplotlib with different colors for bars
+        fig, ax = plt.subplots(figsize=(10, 6))
+        chart_data.plot(kind='bar', ax=ax, color=['skyblue', 'salmon'])
+        ax.set_xlabel('Zodiac Signs')
+        ax.set_ylabel('Compatibility Score (%)')
+        ax.set_title('Zodiac Compatibility')
+        ax.set_xticklabels(chart_data.index, rotation=45)
+        ax.legend()
+        st.pyplot(fig)
     else:
         st.error("Please fill out all the fields. 🚨")
