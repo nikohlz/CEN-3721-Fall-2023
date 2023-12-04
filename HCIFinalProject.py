@@ -98,7 +98,7 @@ st.sidebar.write(zodiac_df.set_index('Zodiac Sign'), index=False)
 
 # User Input for Partner
 partner_name = st.text_input("PARTNER'S NAME:")
-partner_zodiac = st.selectbox("Select your Partner's Zodiac Sign☽:", options=["Capricorn ♑️", "Aquarius ♒️", "Pisces ♓️", "Aries ♈️", "Taurus ♉️", "Gemini ♊️", "Cancer ♋️", "Leo ♌️", "Virgo ♍️", "Libra ♎️️", "Scorpio ♏️", "Sagittarius ♐️"])
+partner_zodiac = st.selectbox("Select your Partner's Zodiac Sign☽:", options=["","Capricorn ♑️", "Aquarius ♒️", "Pisces ♓️", "Aries ♈️", "Taurus ♉️", "Gemini ♊️", "Cancer ♋️", "Leo ♌️", "Virgo ♍️", "Libra ♎️️", "Scorpio ♏️", "Sagittarius ♐️"])
 partner_gender = st.selectbox("Select your Partner's Gender:", options=["","Female", "Male", "Non-Binary"])
 partner_age = st.slider("How old is your partner?", 0, 130, 25)
 st.write("Your partner is", partner_age, "years old")
