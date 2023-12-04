@@ -45,6 +45,14 @@ page_color = f"""
 """
 st.markdown(page_color, unsafe_allow_html=True)
 
+txt = st.text_area(
+    "Why play?",
+    "Zodiac love compatibility delves into how astrological signs interact romantically.  "
+    "Each sign’s unique traits are believed to influence relationships, "
+    "seen as naturally harmonious and others posing potential challenges. "
+    "allowing room for personal interpretation and individual experiences in matters of love."
+    )
+
 st.sidebar.title("Any thoughts?")
 st.sidebar.header("We want to hear from you!")
 #contact options
