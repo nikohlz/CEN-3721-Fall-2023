@@ -103,13 +103,13 @@ partner_gender = st.selectbox("Select your Partner's Gender:", options=["","Fema
 partner_age = st.slider("How old is your partner?", 0, 130, 25)
 st.write("Your partner is", partner_age, "years old")
 
-def generate_popularity_data():
+def generate_compatibility_data():
     zodiac_signs = [
-        "Capricorn", "Aquarius", "Pisces", "Aries", "Taurus", "Gemini",
-        "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius"
+        "Capricorn ♑️", "Aquarius ♒️", "Pisces ♓️", "Aries ♈️", "Taurus ♉️", "Gemini ♊️",
+        "Cancer ♋️", "Leo ♌️", "Virgo ♍️", "Libra ♎️️", "Scorpio ♏️", "Sagittarius ♐️"
     ]
-    popularity_data = np.random.randint(10, 100, size=(len(zodiac_signs), len(zodiac_signs)))
-    return popularity_data, zodiac_signs
+    compatibility_data = np.random.rand(len(zodiac_signs), len(zodiac_signs)) * 50
+    return compatibility_data, zodiac_signs
 
 st.sidebar.title('✨Popular Zodiac Combinations✨')
 
