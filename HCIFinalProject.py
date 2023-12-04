@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import matplotlib as matplot
 import matplotlib.pyplot as plt
 # To run:  streamlit run HCIFinalProject.py
 
