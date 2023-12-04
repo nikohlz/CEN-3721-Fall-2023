@@ -115,7 +115,7 @@ def generate_compatibility_data():
         "Capricorn", "Aquarius", "Pisces", "Aries", "Taurus", "Gemini",
         "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius"
     ]
-    compatibility_data = np.random.rand(len(zodiac_signs), len(zodiac_signs)) * 25
+    compatibility_data = np.random.rand(len(zodiac_signs), len(zodiac_signs)) * 50
     return compatibility_data, zodiac_signs
 
 if st.button("Submit"):
