@@ -71,15 +71,6 @@ if option and agree_terms:
         if phone_number:
             st.sidebar.write(f"Thank you! We will send a text to {phone_number}.")
 
-# User Input for User
-user_name = st.text_input("YOUR NAME:")
-user_zodiac = st.selectbox("Select your Zodiac Sign☽:", options=["","Capricorn ♑️", "Aquarius ♒️", "Pisces ♓️", "Aries ♈️", "Taurus ♉️", "Gemini ♊️", "Cancer ♋️", "Leo ♌️", "Virgo ♍️", "Libra ♎️️", "Scorpio ♏️", "Sagittarius ♐️"])
-user_gender = st.selectbox("Select your Gender:", options=["", "Female", "Male", "Non-Binary"])
-user_color = st.color_picker("Pick your Favorite Color", '#00f900')
-user_age = st.slider('How old are you?', 0, 130, 25)
-st.write("You're", user_age, 'years old')
-
-
 # Zodiac sign data with date ranges
 zodiac_data = {
     'Zodiac Sign': ['Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces'],
@@ -97,10 +88,20 @@ st.sidebar.title('Zodiac Sign Date Ranges')
 st.sidebar.write(zodiac_df.set_index('Zodiac Sign'), index=False)
 
 
+# User Input for User
+user_name = st.text_input("YOUR NAME:")
+user_zodiac = st.selectbox("Select your Zodiac Sign ☽:",
+                           options=["Capricorn", "Aquarius", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius"])
+user_gender = st.selectbox("Select your Gender:", options=["Female", "Male", "Non-Binary"])
+user_color = st.color_picker("Pick your Favorite Color", '#00f900')
+user_age = st.slider('How old are you?', 0, 130, 25)
+st.write("You're", user_age, 'years old')
+
 # User Input for Partner
 partner_name = st.text_input("PARTNER'S NAME:")
-partner_zodiac = st.selectbox("Select your Partner's Zodiac Sign☽:", options=["","Capricorn ♑️", "Aquarius ♒️", "Pisces ♓️", "Aries ♈️", "Taurus ♉️", "Gemini ♊️", "Cancer ♋️", "Leo ♌️", "Virgo ♍️", "Libra ♎️️", "Scorpio ♏️", "Sagittarius ♐️"])
-partner_gender = st.selectbox("Select your Partner's Gender:", options=["","Female", "Male", "Non-Binary"])
+partner_zodiac = st.selectbox("Select your Partner's Zodiac Sign ☽:",
+                              options=["Capricorn", "Aquarius", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius"])
+partner_gender = st.selectbox("Select your Partner's Gender:", options=["Female", "Male", "Non-Binary"])
 partner_color = st.color_picker("Pick your Partner's favorite Color", '#00f900')
 partner_age = st.slider("How old is your partner?", 0, 130, 25)
 st.write("Your partner is", partner_age, "years old")
