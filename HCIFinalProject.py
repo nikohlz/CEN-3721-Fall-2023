@@ -159,7 +159,7 @@ if st.button("Submit"):
 
         # Plotting the bar chart using Matplotlib with different colors for bars
         fig, ax = plt.subplots(figsize=(10, 6))
-        chart_data.plot(kind='bar', ax=ax, color=['skyblue', 'salmon'])
+        chart_data.plot(kind='bar', ax=ax, color=[user_color, partner_color])
         ax.set_xlabel('Zodiac Signs')
         ax.set_ylabel('Compatibility Score (%)')
         ax.set_title('Zodiac Compatibility')
