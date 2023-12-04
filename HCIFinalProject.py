@@ -84,7 +84,7 @@ zodiac_data = {
     'Date Range': ['Mar 21 - Apr 19', 'Apr 20 - May 20', 'May 21 - Jun 20', 'Jun 21 - Jul 22', 'Jul 23 - Aug 22', 'Aug 23 - Sep 22', 'Sep 23 - Oct 22', 'Oct 23 - Nov 21', 'Nov 22 - Dec 21', 'Dec 22 - Jan 19', 'Jan 20 - Feb 18', 'Feb 19 - Mar 20']
 }
 zodiac_df = pd.DataFrame(zodiac_data)
-st.title('Zodiac Sign Date Ranges')
+st.title('✨Zodiac Sign Date Ranges✨')
 st.sidebar.title('Zodiac Sign Date Ranges')
 st.sidebar.write(zodiac_df.set_index('Zodiac Sign'), index=False)
 
