@@ -46,13 +46,26 @@ st.markdown(page_color, unsafe_allow_html=True)
 
 st.sidebar.title("Any thoughts?")
 st.sidebar.header("We want to hear from you!")
-st.sidebar.selectbox("How do you prefer to be contacted?",options= [
-    "", "Email", "Phone Call", "Text Message", "I prefer not to be contacted."])
 #if st.sidebar.selectbox("Email"):
 #    enter_email = st.text_input("Please enter your email we can contact you at!")
-enter_email = st.sidebar.text_input("Please enter your email we can contact you at!")
-if enter_email:
-    st.sidebar.write(f"Thank you! You will receive a message at {enter_email}")
+#side bar
+option = st.sidebar.selectbox("How do you prefer to be contacted?", options=[
+    "", "Email", "Phone Call", "Text Message", "I prefer not to be contacted."])
+if option == "Email":
+    st.sidebar.write("Please enter your email below:")
+    enter_email = st.sidebar.text_input("Email")
+    if enter_email:
+        st.sidebar.write(f"Thank you! You will receive a message at {enter_email}")
+elif option == "Phone Call":
+    st.sidebar.write("Please enter your phone number below for a call:")
+    phone_number = st.sidebar.text_input("Phone Number")
+    if phone_number:
+        st.sidebar.write(f"Thank you! We will contact you at {phone_number} for a phone call.")
+elif option == "Text Message":
+    st.sidebar.write("Please enter your phone number below for a text:")
+    phone_number = st.sidebar.text_input("Phone Number")
+    if phone_number:
+        st.sidebar.write(f"Thank you! We will send a text to {phone_number}.")
 
 # User Input for User
 user_name = st.text_input("YOUR NAME:")
