@@ -105,6 +105,7 @@ partner_gender = st.selectbox("Select your Partner's Gender:", options=["Female"
 partner_color = st.color_picker("Pick your Partner's favorite Color", '#00f900')
 partner_age = st.slider("How old is your partner?", 0, 130, 25)
 st.write("Your partner is", partner_age, "years old")
+
 def generate_popularity_data():
     zodiac_signs = [
         "Capricorn", "Aquarius", "Pisces", "Aries", "Taurus", "Gemini",
