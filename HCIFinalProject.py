@@ -144,5 +144,12 @@ if st.button("Submit"):
         ax.set_xticklabels(chart_data.index, rotation=45)
         ax.legend()
         st.pyplot(fig)
+      
+        st.subheader('✨Matches and Potential Couples Map✨')
+        df = pd.DataFrame(
+            np.random.randn(1000, 2) / [50, 50] + [25.7617, -80.1918],
+            columns=['lat', 'lon'])
+
+        st.map(df)
     else:
         st.error("Please fill out all the fields. 🚨")
