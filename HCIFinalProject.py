@@ -163,7 +163,7 @@ if st.button("Submit"):
         ax.legend()
         st.pyplot(fig)
       
-        st.subheader('✨Matches and Potential Couples Map✨')
+        st.subheader('✨Potential Couple Matches in Your Area✨')
         df = pd.DataFrame(
             np.random.randn(1000, 2) / [50, 50] + [25.7617, -80.1918],
             columns=['lat', 'lon'])
